@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+    <h1 class="logo">Mem game v0.0.1</h1>
+    <nav>
+        <button id="home-btn">Home</button>
+        <button id="new-game-btn">New Game</button>
+        <button id="top-players-btn">Top players</button>
+    </nav>
+</header>
+
+<main>
+    <article id="start-game">
+        <header>
+            <h2>The Memory Card Game</h2>
+        </header>
+        <main>
+            <ul class="detailed-rules">
+                <li>Select two cards to try to match the pictures.</li>
+                <li>If you match the picture you can go again.</li>
+                <li>If they don't match it is the computer turn them.</li>
+                <li>The player that finds all pairs wins!</li>
+                <li>Have Fun!</li>
+            </ul>
+        </main>
+        <footer>
+            <button id="start-btn">Start Game</button>
+        </footer>
+    </article>
+
+    <article id="game-options" style="display: none">
+        <header>
+            <h2>Game option</h2>
+        </header>
+        <main>
+            <form class="game-options__form">
+                <div class="game-options__field">
+                    <label for="first-name">First Name</label>
+                    <input id="first-name" type="text" name="first-name" placeholder="your first name *" required/>
+                </div>
+                <div class="game-options__field">
+                    <label for="last-name">Last Name</label>
+                    <input id="last-name" type="text" name="last-name" placeholder="your last name *" required/>
+                </div>
+                <div class="game-options__field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="your email *" required/>
+                </div>
+                <div class="game-options__field radio-bth" id="card-face">
+                    <label>
+                        <input type="radio" name="faceCard" value="./img/faces/1.jpg" checked/>
+                        <img src="./img/faces/1.jpg">
+                    </label>
+                    <label>
+                        <input type="radio" name="faceCard" value="./img/faces/2.jpg"/>
+                        <img src="./img/faces/2.jpg">
+                    </label>
+                    <label>
+                        <input type="radio" name="faceCard" value="./img/faces/3.jpg"/>
+                        <img src="./img/faces/3.jpg">
+                    </label>
+                </div>
+                <div class="game-options__field">
+                    <label for="difficulty"></label>
+                    <select id="difficulty">
+                        <option value="5">Easy</option>
+                        <option value="10">Normal</option>
+                        <option value="15">Hard</option>
+                        <option value="20">Very Hard</option>
+                    </select>
+                </div>
+                <button>Start Game</button>
+            </form>
+        </main>
+    </article>
+
+    <article id="game" style="display: none">
+        <header>
+            <h2>Game</h2>
+        </header>
+        <main class="game__main">
+            <div class="game__time"></div>
+        </main>
+    </article>
+
+    <article id="congratulations" style="display: none">
+        <header>
+            <h2>Congratulations</h2>
+        </header>
+        <main class="congratulations-content">
+            <div id="congratulation__greet"></div>
+            <div id="congratulation__score"></div>
+        </main>
+        <footer>
+            <button id="congratulations-btn-new-game">Start</button>
+            <button id="congratulations-btn-top">Top player</button>
+        </footer>
+    </article>
+
+    <article class="rates-container" id="rates" style="display: none">
+        <header>
+            <h2>Ratings</h2>
+        </header>
+        <main id="top-rates">
+        </main>
+        <footer>
+            <button id="backtogame-btn">Back</button>
+        </footer>
+    </article>
+</main>
+
+<footer>
+    &copy; Anv21 2018
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        new App(MAIN_VIEW, {});
+    });
+</script>
+<script src="js/views/BaseView.js"></script>
+<script src="js/views/MainView.js"></script>
+<script src="js/views/GameOptionView.js"></script>
+<script src="js/views/GameView.js"></script>
+<script src="js/views/CongratulationView.js"></script>
+<script src="js/views/RatesView.js"></script>
+<script src="js/App.js"></script>
+<script src="js/game/Card.js"></script>
+<script src="js/game/Game.js"></script>
+
+</body>
+</html>
